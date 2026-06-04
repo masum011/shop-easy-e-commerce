@@ -75,8 +75,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const updateQuantity = (productId: number, quantity: number) =>
     dispatch({ type: 'UPDATE_QUANTITY', productId, quantity });
 
-  const totalItems = state.items.reduce((sum, i) => sum + i.quantity, 0);
-  const totalPrice = state.items.reduce((sum, i) => sum + i.product.price * i.quantity, 0);
+  const totalItems = state.items.reduce((sum: number, i: CartItem) => sum + i.quantity, 0);
+  const totalPrice = state.items.reduce((sum: number, i: CartItem) => sum + i.product.price * i.quantity, 0);
 
   return (
     <CartContext.Provider value={{ items: state.items, addItem, removeItem, updateQuantity, totalItems, totalPrice }}>

@@ -11,7 +11,7 @@ function CartRow({ item }: { item: CartItem }) {
       className="flex gap-4 items-center p-4 bg-white rounded-xl shadow-sm mb-3 flex-wrap"
     >
       <img
-        src={item.product.images}
+        src={item.product.images[0]}
         alt={item.product.title}
         style={{ width: '80px', height: '80px', objectFit: 'cover', borderRadius: '8px', flexShrink: 0 }}
       />

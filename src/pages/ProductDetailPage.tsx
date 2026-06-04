@@ -70,8 +70,8 @@ export default function ProductDetailPage() {
             >
                 <div className="bg-[#f8f8f8] min-h-[360px] relative">
                     <img
-                        src={product.images}
-                        alt={product.title}
+                        src={product?.images[0]}
+                        alt={product?.title}
                         className="w-full h-full min-h-[360px] object-cover block"
                     />
                 </div>
@@ -81,16 +81,16 @@ export default function ProductDetailPage() {
                     <p
                         className="text-xs text-teal-700 font-semibold uppercase tracking-[0.8px] mb-2"
                     >
-                        {product.category?.name}
+                        {product?.category?.name}
                     </p>
                     <h1 className="text-[26px] font-bold text-[#1a1a1a] mb-4 leading-[1.3]">
-                        {product.title}
+                        {product?.title}
                     </h1>
                     <p className="text-3xl font-extrabold text-teal-700 mb-5">
-                        ${product.price.toFixed(2)}
+                        ${product?.price.toFixed(2)}
                     </p>
                     <p className="text-[15px] text-gray-600 leading-[1.7] mb-8">
-                        {product.description}
+                        {product?.description}
                     </p>
                     <AddToCartButton product={product} />
                 </div>
